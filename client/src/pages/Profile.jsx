@@ -49,7 +49,7 @@ export default function Profile() {
     );
   };
 
-  const handleSignOut=async(e) =>{
+  const handleSignOut=async() =>{
     try {
       dispatch(signOutUserStart());
       const res = await fetch('api/auth/signout');
@@ -58,7 +58,7 @@ export default function Profile() {
         dispatch(signOutUserSuccess(data.message));
         return;
       }
-      dispatch(signOutUserFailure(data.message));
+      dispatch(signOutUserSuccess(data));
 
     } catch (error) {
       dispatch(signOutUserFailure(data.message));
@@ -66,8 +66,8 @@ export default function Profile() {
 
   }
 
-  const handleSubmit= async (e) =>{
-    e.preventDefault();
+  const handleSubmit= async () =>{
+    
     try {
       dispatch(updateUserStart());
       const res = await fetch(`/api/user/update/${currentUser._id}`, {
