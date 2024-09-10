@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
     background-color: rgb(241, 245, 241);
+}
+
+.home-background {
+    background-image: url('https://wallpapers.com/images/hd/real-estate-white-graphics-design-qr9394ynnogt96or.jpg');
+    background-size: cover;
+    background-position: center;
 }
